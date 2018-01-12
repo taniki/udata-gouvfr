@@ -9,31 +9,41 @@
 var recoUrl = 'https://raw.githubusercontent.com/etalab/datasets_reco/master/reco_json/';
 
 function getDatasetId() {
+    
     var selector = '#json_ld';
     var dataset = JSON.parse(document.querySelector(selector).text);
+    
     return dataset && dataset['@id'];
 }
 
 function addRecos(recos) {
+    
     var maxRecos = 2;
     var recoContainer = document.getElementById('dataset-recommendations-container');
     var recoChildContainer, recoChildEmbed;
+    
     recos.splice(0, maxRecos).forEach(function (reco) {
+    
         recoChildContainer = document.createElement('div');
-        recoChildContainer.classList.add('col-reco', 'col-sm-12', 'col-md-6');
+        recoChildContainer.classList.add('recommendation');
+    
         recoChildEmbed = document.createElement('div');
         recoChildEmbed.setAttribute('data-udata-dataset-id', reco[0]);
+    
         recoChildContainer.appendChild(recoChildEmbed);
         recoContainer.appendChild(recoChildContainer);
     });
 }
 
 function addWidgetScript() {
+    
     var scriptElm = document.createElement('script');
+    
     scriptElm.type = 'application/javascript';
     scriptElm.src = '/static/widgets.js';
     scriptElm.id = 'udata';
     scriptElm.onload = loadDatasets;
+    
     document.body.appendChild(scriptElm);
 }
 
@@ -63,7 +73,7 @@ if (datasetId) {
     // * 1 dataset
     // datasetId = '53698e90a3a729239d2034d3';
     // * 2 datasets
-    // datasetId = '536991b0a3a729239d203d13'
+    //  datasetId = '536991b0a3a729239d203d13'
     fetchRecos(datasetId);
 }
 </script>
