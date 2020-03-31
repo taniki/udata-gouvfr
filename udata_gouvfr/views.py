@@ -17,28 +17,28 @@ blueprint = I18nBlueprint('gouvfr', __name__,
                           static_url_path='/static/gouvfr')
 
 
-@blueprint.route('/dataset/<dataset>/')
-def redirect_datasets(dataset):
-    '''Route Legacy CKAN datasets'''
-    return redirect(url_for('datasets.show', dataset=dataset))
-
-
-@blueprint.route('/organization/')
-def redirect_organizations_list():
-    '''Route legacy CKAN organizations listing'''
-    return redirect(url_for('organizations.list'))
-
-
-@blueprint.route('/organization/<org>/')
-def redirect_organizations(org):
-    '''Route legacy CKAN organizations'''
-    return redirect(url_for('organizations.show', org=org))
-
-
-@blueprint.route('/group/<topic>/')
-def redirect_topics(topic):
-    '''Route legacy CKAN topics'''
-    return redirect(url_for('topics.display', topic=topic))
+# @blueprint.route('/dataset/<dataset>/')
+# def redirect_datasets(dataset):
+#     '''Route Legacy CKAN datasets'''
+#     return redirect(url_for('datasets.show', dataset=dataset))
+#
+#
+# @blueprint.route('/organization/')
+# def redirect_organizations_list():
+#     '''Route legacy CKAN organizations listing'''
+#     return redirect(url_for('organizations.list'))
+#
+#
+# @blueprint.route('/organization/<org>/')
+# def redirect_organizations(org):
+#     '''Route legacy CKAN organizations'''
+#     return redirect(url_for('organizations.show', org=org))
+#
+#
+# @blueprint.route('/group/<topic>/')
+# def redirect_topics(topic):
+#     '''Route legacy CKAN topics'''
+#     return redirect(url_for('topics.display', topic=topic))
 
 
 @blueprint.route('/Redevances')

@@ -1,11 +1,11 @@
-{% extends "raw.html" %}
+<!doctype html>
+<html class="no-js" lang="">
 
-{% block theme_css %}
-{{ super() }}
-<link href="{{ manifest('theme', 'theme.css') }}" rel="stylesheet">
-{% endblock %}
+<head>
+</head>
 
-{% block raw_head %}
-{{ super() }}
-<link rel="shortcut icon" href="{{ theme_static('img/favicon.png') }}">
-{% endblock %}
+<body>
+  {% block body %}{% endblock %}
+</body>
+
+</html>
